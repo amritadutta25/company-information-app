@@ -187,7 +187,7 @@ Once we receive the request, the website will display an overview of the company
 
 #### Mobile View
 
-![My Mobile View](https://i.imgur.com/8SY4lid.png)
+![My Mobile View](https://i.imgur.com/De34Y7F.png)
 
 ## Schedule of Work
 
