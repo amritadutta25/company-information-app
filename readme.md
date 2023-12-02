@@ -1,13 +1,13 @@
 # Project
 ### By somebody
 
+DEPLYOYED SITE: [Click Here](https://sealproject1.vercel.app/)
+
 ## Description on Project
 
 A paragraph discussing the idea of your project, the API you are using and desired user experience.
 
 > I am creating a perfume maker, we generate list of perfume ingredient using the items from the perfume ingredient api. Users will select ingredients and generate an imaginary perfume.
-
-DEPLYOYED SITE: [Click Here](https://sealproject1.vercel.app/)
 
 ## Details about the API
 
