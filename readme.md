@@ -183,11 +183,11 @@ Once we receive the request, the website will display an overview of the company
 
 #### Desktop View
 
-![My Desktop View](https://i.imgur.com/zZAh19G.png)
+![My Desktop View](https://i.imgur.com/AIRRnT3.png)
 
 #### Mobile View
 
-![My Mobile View](https://i.imgur.com/De34Y7F.png)
+![My Mobile View](https://i.imgur.com/XOkIHLv.png)
 
 ## Schedule of Work
 
