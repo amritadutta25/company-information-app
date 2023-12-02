@@ -10,7 +10,8 @@ DEPLYOYED SITE: [Click Here](https://amritadutta25.github.io/sealproject1/)
 
 ## Details about the API
 
-We are going to use the API with two different endpoints as below:
+We are going to use the API: 
+<!-- with two different endpoints as below: -->
 
 - `https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo`: This returns a json array with all the company details and overview
 
@@ -186,7 +187,7 @@ Once we receive the request, the website will display an overview of the company
 
 #### Mobile View
 
-![My Mobile View](https://i.imgur.com/5Bs7N6B.png)
+![My Mobile View](https://i.imgur.com/8SY4lid.png)
 
 ## Schedule of Work
 
