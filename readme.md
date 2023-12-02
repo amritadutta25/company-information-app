@@ -182,7 +182,7 @@ Once we receive the request, the website will display an overview of the company
 
 #### Desktop View
 
-![My Desktop View](https://wireframepro.mockflow.com/view/companyreport)
+![My Desktop View](https://imgur.com/zZAh19G)
 
 #### Mobile View
 
