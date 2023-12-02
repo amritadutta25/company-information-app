@@ -182,7 +182,7 @@ Once we receive the request, the website will display an overview of the company
 
 #### Desktop View
 
-![My Desktop View](https://imgur.com/zZAh19G)
+![My Desktop View](https://i.imgur.com/zZAh19G.png)
 
 #### Mobile View
 
