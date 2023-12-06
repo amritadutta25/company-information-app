@@ -1,19 +1,36 @@
 //*********************** */
 // GLOBAL VARIABLES
 //************************ */
-const apikey = "AAYEBOO4YJ3BWSH"
+const apikey = "IKS3X65IYOT28R6B"
 const baseURL = "https://www.alphavantage.co/query"
 let url;
 
+const companyName = $(".company-name") // company name
 const aboutCompany = $(".about")  // company 'About' section
+
+
+//*********************** */
+// HELPER FUNCTIONS
+//************************ */
+
+// function to make the starting letter of each word in a string Uppercase and all other letters as Lowercase
+//  e.g. capitalizeWords("hello WORLD")) => Output: "Hello World"
+function capitalizeWords(str) {
+
+    // /\b\w/g will match the first character of each word in the string
+    return str.toLowerCase().replace(/\b\w/g, 
+    function(char) {
+        return char.toUpperCase();
+    });
+}
 
 
 
 //*********************** */
-// Functions
+// FUNCTIONS
 //************************ */
-// function to fetch the data
 
+// function to fetch the data
 function getCompanyInfo(ticker) {
 
 
@@ -40,8 +57,6 @@ function getCompanyInfo(ticker) {
 
 // function to render Company name
 function renderCompanyName(data) {
-    // grab div for company name
-    const companyName = $(".company-name")
     companyName.append(
         ` <h1>${data.Name}</h1>`
     )
@@ -53,10 +68,49 @@ function renderAboutCompany(data){
     // alter the HTML inside the div.about
     aboutCompany.append(
         `<h2>About</h2>
-        <p>${data.Description}</p>
-        <div class="address">${data.Address}</div>
-        <div class="sector">${data.Sector}</div>
-        <div class="industry">${data.Industry}</div>
+        <hr>
+        <p class="description">${data.Description}</p>
+        <div class="row more-about">
+            <div class="sector">
+                <h4>Sector</h4>
+                <span>${capitalizeWords(data.Sector)}</span>
+            </div>
+            <div class="industry">
+                <h4>Industry</h4>
+                <span>${capitalizeWords(data.Industry)}</span>
+            </div>
+            <div class="address">
+                <h4>Address</h4>
+                <span>${data.Address}</span>
+            </div>
+        </div>
+        `
+    )
+    
+}
+
+// function that render 'Key Statistics' section
+function renderStatsCompany(data){
+
+    // alter the HTML inside the div.about
+    aboutCompany.append(
+        `<h2>About</h2>
+        <hr>
+        <p class="description">${data.Description}</p>
+        <div class="row more-about">
+            <div class="sector">
+                <h4>Sector</h4>
+                <span>${capitalizeWords(data.Sector)}</span>
+            </div>
+            <div class="industry">
+                <h4>Industry</h4>
+                <span>${capitalizeWords(data.Industry)}</span>
+            </div>
+            <div class="address">
+                <h4>Address</h4>
+                <span>${data.Address}</span>
+            </div>
+        </div>
         `
     )
     
@@ -64,6 +118,11 @@ function renderAboutCompany(data){
 
 //function to handle the form submission
 function handleSubmit(event){
+
+    // clearing previous search result
+    companyName.html('')
+    aboutCompany.html('')
+
     
     // prevent the refreshing of the page from the form submission
     // refreshing of the page is the default behaviour of forms
@@ -91,5 +150,8 @@ function handleSubmit(event){
 // Main Code
 //************************ */
 
+// add the function to the form submission
+$("form").on("submit", handleSubmit)
+
 //initial call to populate the first ticker
-// getCompanyInfo("BLK")
+getCompanyInfo("BLK")
