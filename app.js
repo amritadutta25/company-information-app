@@ -118,7 +118,10 @@ function renderStatsCompany(data){
         <hr>
         <div class="row stats-items">
             <div class="stat">
-                <h4>Market Cap</h4>
+                <div class="row stat-info">
+                    <h4>Market Cap</h4>
+                    <button class="info-button">i</button>
+                </div>
                 <span>${formatLargeNumber(data.MarketCapitalization)}</span>
             </div>
             <div class="stat">
@@ -191,3 +194,7 @@ $("form").on("submit", handleSubmit)
 
 //initial call to populate the first ticker
 getCompanyInfo("BLK")
+
+
+// Todo: for statistics - do a 'i' button that when clicked opens a pop up in that space and says what it means
+// Todo: try adding one graph which is diplayed when user wants to see it
