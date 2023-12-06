@@ -11,17 +11,29 @@ body {
     background-color: black;
     font-family: 'Helvetica', sans-serif;
     color: white;
+    margin-left: 30px;
+    margin-right: 30px;
+    font-size: 1em;
 }
+
+hr {
+    border: 0.5px solid rgb(91, 88, 88);
+}
+
+/* ============================
+HEADER SECTION
+==============================*/
 
 .top-header {
     justify-content: space-between;
+    margin-top: 18px;
 }
 
 /* LOGO */
 
 .logo {
     width: 10%;
-    height : auto;
+    height: 50px;
     min-width: 50px; 
     /* setting min-width so that it doesn't get too pinched when browser window is minimized */
 
@@ -29,15 +41,14 @@ body {
 }
 
 
-/* SEARCH FIELD */
+/* SEARCH BAR */
 form {
     position: relative; 
-    /* setting this so that the search icon inside is absolutely positioned relative to this .form div" */ 
+    /* setting position:relative so that the search icon inside is absolutely positioned relative to this form div" */ 
     width: 600px; /* width of search box */
 
     /* 10% distance from the logo present on the left */
     margin-left: 10%;
-    margin-top: 18px;
 
 }
 
@@ -55,13 +66,13 @@ input[type="text"] {
 }
 
 .search-icon {
-    /* positioned absolutely relative to .form div (neareast positioned ancestor) */
+    /* positioned absolutely relative to form div (nearest positioned ancestor) */
     position: absolute;
 
-    /* positioned 18% distance from the top edge of the .form div (neareast positioned ancestor)
+    /* positioned 18% distance from the top edge of the form div (nearest positioned ancestor)
     and
     positioned 8px from the left edge of .form div (nearest positioned ancestor) */
-    top: 10%; 
+    top: 30%; 
     left: 8px;
 
 }
@@ -70,11 +81,6 @@ input[type="text"] {
 nav {
     width: 80%;
     justify-content: flex-end;
-    margin-right: 30px;
-}
-
-.nav-item {
-    padding-top: 18px;
 }
 
 /* nav items on hover turns green */
@@ -82,18 +88,45 @@ nav {
     color: green;
 }
 
+form, .nav-item {
+    padding-top: 10px;
+}
+
 .crypto {
-    /* padding top kept inline with .nav-item padding-top */
-    padding: 18px 7%;
+    padding-left: 7%;
+    padding-right: 7%;
 }
 
-.acct {
-    margin-right: 10px;
+/* ============================
+ABOUT SECTION
+==============================*/
+.more-about {
+    width: 70%;
+    justify-content:space-between;
+}
+
+
+/* ============================
+STATISTICS SECTION
+==============================*/
+.stats {
+    margin-top: 80px;
+}
+
+.stats-items {
+    justify-content: space-between;
+    flex-wrap:wrap;
 }
 
 
 
-/* Mobile view */
+
+
+
+
+/* ============================
+Mobile view
+==============================*/
 @media screen and (max-width: 600px) { 
     .top-header {
         flex-wrap: wrap;

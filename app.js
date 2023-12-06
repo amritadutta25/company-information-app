@@ -7,6 +7,7 @@ let url;
 
 const companyName = $(".company-name") // company name
 const aboutCompany = $(".about")  // company 'About' section
+const statsCompany = $(".stats") // company 'Statistics' section
 
 
 //*********************** */
@@ -22,6 +23,24 @@ function capitalizeWords(str) {
     function(char) {
         return char.toUpperCase();
     });
+}
+
+// function to format large numbers into 'billion', 'million' 
+function formatLargeNumber(num) {
+    if (num >= 1000000000000)
+    {   
+        // keeping upto 2 decimal places
+        return (num / 1000000000000).toFixed(2) + 'T'
+    }
+    else if (num >= 1000000000) 
+    {
+        return (num / 1000000000).toFixed(2) + 'B';
+    } 
+    else if (num >= 1000000) {
+        return (num / 1000000).toFixed(2) + 'M';
+    } else {
+        return num.toString();
+    }
 }
 
 
@@ -51,6 +70,7 @@ function getCompanyInfo(ticker) {
     .then((data) => {
         renderCompanyName(data)
         renderAboutCompany(data)
+        renderStatsCompany(data)
     })
 
 }
@@ -89,26 +109,41 @@ function renderAboutCompany(data){
     
 }
 
-// function that render 'Key Statistics' section
+// function that render 'Statistics' section
 function renderStatsCompany(data){
 
-    // alter the HTML inside the div.about
-    aboutCompany.append(
-        `<h2>About</h2>
+    // alter the HTML inside the div.stats
+    statsCompany.append(
+        `<h2>Statistics</h2>
         <hr>
-        <p class="description">${data.Description}</p>
-        <div class="row more-about">
-            <div class="sector">
-                <h4>Sector</h4>
-                <span>${capitalizeWords(data.Sector)}</span>
+        <div class="row stats-items">
+            <div class="stat">
+                <h4>Market Cap</h4>
+                <span>${formatLargeNumber(data.MarketCapitalization)}</span>
             </div>
-            <div class="industry">
-                <h4>Industry</h4>
-                <span>${capitalizeWords(data.Industry)}</span>
+            <div class="stat">
+                <h4>EBITDA</h4>
+                <span>${formatLargeNumber(data.EBITDA)}</span>
             </div>
-            <div class="address">
-                <h4>Address</h4>
-                <span>${data.Address}</span>
+            <div class="stat">
+                <h4>Price-Earnings ratio</h4>
+                <span>${data.PERatio}</span>
+            </div>
+            <div class="stat">
+                <h4>Dividend Per Share</h4>
+                <span>${data.DividendPerShare}</span>
+            </div>
+            <div class="stat">
+                <h4>Dividend Yield</h4>
+                <span>${data.DividendYield*100}%</span>
+            </div>
+            <div class="stat">
+                <h4>52 Week High</h4>
+                <span>$${data['52WeekHigh']}</span>
+            </div>
+            <div class="stat">
+                <h4>52 Week Low</h4>
+                <span>$${data['52WeekHigh']}</span>
             </div>
         </div>
         `
@@ -122,6 +157,7 @@ function handleSubmit(event){
     // clearing previous search result
     companyName.html('')
     aboutCompany.html('')
+    statsCompany.html('')
 
     
     // prevent the refreshing of the page from the form submission
