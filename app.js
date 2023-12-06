@@ -32,9 +32,19 @@ function getCompanyInfo(ticker) {
     fetch(url)
     .then((res) => res.json())
     .then((data) => {
+        renderCompanyName(data)
         renderAboutCompany(data)
     })
 
+}
+
+// function to render Company name
+function renderCompanyName(data) {
+    // grab div for company name
+    const companyName = $(".company-name")
+    companyName.append(
+        ` <h1>${data.Name}</h1>`
+    )
 }
 
 // function that render 'About' section
@@ -43,7 +53,7 @@ function renderAboutCompany(data){
     // alter the HTML inside the div.about
     aboutCompany.append(
         `<h2>About</h2>
-        <p>I${data.Description}</p>
+        <p>${data.Description}</p>
         <div class="address">${data.Address}</div>
         <div class="sector">${data.Sector}</div>
         <div class="industry">${data.Industry}</div>
@@ -82,4 +92,4 @@ function handleSubmit(event){
 //************************ */
 
 //initial call to populate the first ticker
-getCompanyInfo("BLK")
+// getCompanyInfo("BLK")

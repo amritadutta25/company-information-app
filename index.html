@@ -16,23 +16,30 @@
 <body>
 
     <!-- HEADER SECTION -->
-    <header>
-        <img src="./images/logo.png" alt="Stock">
-        <div class="form">
+    <header class="row top-header">
+
+        <!-- LOGO -->
+        <img class="logo" src="./images/logo.png" alt="App logo">
+
+        <!-- SEARCH FIELD -->
+        <div class="row form">
             <form>
+                <span class="search-icon">&#128269;</span> <!-- magnifying glass icon -->
                 <input type="text" name="ticker" placeholder="Search">
             </form>
         </div>
 
         <!-- NAVIGATION BAR -->
-        <nav>
-            <div class="nav-item"></div>
-            <div class="nav-item"></div>
-            <div class="nav-item"></div>
-            <div class="nav-item"></div>
-            <div class="nav-item"></div>
+        <nav class="row">
+            <div class="nav-item inv">Investment</div>
+            <div class="nav-item crypto">Crypto</div>
+            <div class="nav-item acct">Account</div>
         </nav>
+
     </header>
+
+    <!-- DISPLAY COMPANY NAME -->
+    <div class="company-name"></div>
 
     <main>
         <!-- 'ABOUT' SECTION, gives company overview -->

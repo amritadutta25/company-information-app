@@ -1,4 +1,111 @@
 * {
     /* this creates a border across all containers/elemnts which makes it easier to view and apply css styles */
-    outline: 2px dotted green;
+    /* outline: 2px dotted green; */
+}
+
+.row {
+    display: flex;
+}
+
+body {
+    background-color: black;
+    font-family: 'Helvetica', sans-serif;
+    color: white;
+}
+
+.top-header {
+    justify-content: space-between;
+}
+
+/* LOGO */
+
+.logo {
+    width: 10%;
+    height : auto;
+    min-width: 50px; 
+    /* setting min-width so that it doesn't get too pinched when browser window is minimized */
+
+    margin-left: 50px;
+}
+
+
+/* SEARCH FIELD */
+form {
+    position: relative; 
+    /* setting this so that the search icon inside is absolutely positioned relative to this .form div" */ 
+    width: 600px; /* width of search box */
+
+    /* 10% distance from the logo present on the left */
+    margin-left: 10%;
+    margin-top: 18px;
+
+}
+
+input[type="text"] {
+    color: white;
+    width: 100%;
+    padding: 5px 30px 5px 30px; 
+    /* box-sizing: includes padding and border in the element's width */
+    box-sizing: border-box; 
+    background-color: black;
+
+    border: 1px solid rgb(91, 88, 88);
+    border-radius: 4px;
+
+}
+
+.search-icon {
+    /* positioned absolutely relative to .form div (neareast positioned ancestor) */
+    position: absolute;
+
+    /* positioned 18% distance from the top edge of the .form div (neareast positioned ancestor)
+    and
+    positioned 8px from the left edge of .form div (nearest positioned ancestor) */
+    top: 10%; 
+    left: 8px;
+
+}
+
+/* NAVIGATION BAR */
+nav {
+    width: 80%;
+    justify-content: flex-end;
+    margin-right: 30px;
+}
+
+.nav-item {
+    padding-top: 18px;
+}
+
+/* nav items on hover turns green */
+.nav-item:hover {
+    color: green;
+}
+
+.crypto {
+    /* padding top kept inline with .nav-item padding-top */
+    padding: 18px 7%;
+}
+
+.acct {
+    margin-right: 10px;
+}
+
+
+
+/* Mobile view */
+@media screen and (max-width: 600px) { 
+    .top-header {
+        flex-wrap: wrap;
+    }
+
+    .form {
+        width: 100%; 
+        /* makes search bar take full screen */
+        order: 3; /* Moves search bar below the logo and nav bar */
+    }
+
+    .logo, .nav {
+        width: auto;
+    }
 }
