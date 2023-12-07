@@ -1,6 +1,6 @@
 * {
     /* this creates a border across all containers/elemnts which makes it easier to view and apply css styles */
-    outline: 2px dotted green;
+    /* outline: 2px dotted green; */
 }
 
 .row {
@@ -122,22 +122,33 @@ STATISTICS SECTION
     flex-wrap:wrap;
 }
 
+
 .info-button {
     background-color: black;
     color: white;
     font-size: 0.2em;
 
     height: 20%;
-    margin-top: 15%;
+    margin-top: 15px;
 
     /* 50% border-radius makes it a circle */
     border-radius: 50%;  
     border: 0.5px solid white;
 }
 
-/* span .button {
-    
-} */
+.info-box {
+    /* positioned abosloutely so that it is outside the normal document flow and 'floats' over other elements and later it is positioned in the eventListener function displayInfo() relative to the .info-button\
+     */
+    position: absolute; 
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    display: none; /* Initially hidden */
+    color: black;
+    font-size: 0.9em;
+    width: 20%;
+    height: auto;
+}
 
 
 

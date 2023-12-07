@@ -3,11 +3,22 @@
 //************************ */
 const apikey = "IKS3X65IYOT28R6B"
 const baseURL = "https://www.alphavantage.co/query"
-let url;
+let url
 
 const companyName = $(".company-name") // company name
 const aboutCompany = $(".about")  // company 'About' section
 const statsCompany = $(".stats") // company 'Statistics' section
+
+// object with additional stat info
+const statInfo = {
+    marketcap: "Market capitalization refers to the total market value of a company's outstanding shares of stock.",
+    ebitda: "Stands for Earnings Before Interest, Taxes, Depreciation, and Amortization. It is a financial indicator measuring a company's profitability before accounting for interest, taxes, depreciation, and amortization.",
+    peratio: "A measure comparing a company's current stock price to its per-share earnings, often used to assess the value and growth potential of stocks.",
+    divshare: "The amount of dividend a company pays out to its shareholders for each share owned.",
+    divyield: "A financial ratio that shows how much a company pays out in dividends each year relative to its stock price.",
+    weekhigh: "The highest price at which a stock has traded during the previous 52 weeks.",
+    weeklow: "The lowest price at which a stock has traded during the previous 52 weeks."
+}
 
 
 //*********************** */
@@ -21,8 +32,8 @@ function capitalizeWords(str) {
     // /\b\w/g will match the first character of each word in the string
     return str.toLowerCase().replace(/\b\w/g, 
     function(char) {
-        return char.toUpperCase();
-    });
+        return char.toUpperCase()
+    })
 }
 
 // function to format large numbers into 'billion', 'million' 
@@ -34,12 +45,12 @@ function formatLargeNumber(num) {
     }
     else if (num >= 1000000000) 
     {
-        return (num / 1000000000).toFixed(2) + 'B';
+        return (num / 1000000000).toFixed(2) + 'B'
     } 
     else if (num >= 1000000) {
-        return (num / 1000000).toFixed(2) + 'M';
+        return (num / 1000000).toFixed(2) + 'M'
     } else {
-        return num.toString();
+        return num.toString()
     }
 }
 
@@ -120,33 +131,51 @@ function renderStatsCompany(data){
             <div class="stat">
                 <div class="row stat-info">
                     <h4>Market Cap</h4>
-                    <button class="info-button">i</button>
+                    <button class="info-button marketcap">i</button>
                 </div>
                 <span>${formatLargeNumber(data.MarketCapitalization)}</span>
             </div>
             <div class="stat">
-                <h4>EBITDA</h4>
+                <div class="row stat-info">
+                    <h4>EBITDA</h4>
+                    <button class="info-button ebitda">i</button>
+                </div>
                 <span>${formatLargeNumber(data.EBITDA)}</span>
             </div>
             <div class="stat">
-                <h4>Price-Earnings ratio</h4>
+                <div class="row stat-info">
+                    <h4>Price-Earnings ratio</h4>
+                    <button class="info-button peratio">i</button>
+                </div>
                 <span>${data.PERatio}</span>
             </div>
             <div class="stat">
-                <h4>Dividend Per Share</h4>
+                <div class="row stat-info">
+                    <h4>Dividend Per Share</h4>
+                    <button class="info-button divshare">i</button>
+                </div>
                 <span>${data.DividendPerShare}</span>
             </div>
             <div class="stat">
-                <h4>Dividend Yield</h4>
+                <div class="row stat-info">
+                    <h4>Dividend Yield</h4>
+                    <button class="info-button divyield">i</button>
+                </div>
                 <span>${data.DividendYield*100}%</span>
             </div>
             <div class="stat">
-                <h4>52 Week High</h4>
+                <div class="row stat-info">
+                    <h4>52 Week High</h4>
+                    <button class="info-button weekhigh">i</button>
+                </div>
                 <span>$${data['52WeekHigh']}</span>
             </div>
             <div class="stat">
-                <h4>52 Week Low</h4>
-                <span>$${data['52WeekHigh']}</span>
+                <div class="row stat-info">
+                    <h4>52 Week Low</h4>
+                    <button class="info-button weeklow">i</button>
+                </div>
+                <span>$${data['52WeekLow']}</span>
             </div>
         </div>
         `
@@ -184,13 +213,59 @@ function handleSubmit(event){
 
 }
 
+// function to display additional info about the stats
+function displayInfo(event) {
+
+    event.preventDefault()
+
+    const infoBox = $('.info-box')
+
+    const buttonClicked = $(event.target)
+
+    let className = buttonClicked.attr('class') // getting class
+    className = className.split(' ')[1] // getting the second class to get the specfic button class name
+
+    infoBox.append(
+        `${statInfo[className]}`
+    )
+
+
+    infoBox.css({
+        display: 'block',
+
+        // top of info-box aligns with the top of the element clicked, that is, info-button(event.target)
+        top: buttonClicked.position().top + 'px',
+
+        // left of info-box is on the Right side of the button (left + outerwidth = right edge of the clicked button)
+        // Cannot directly use buttonClicked.position().right, since position() only has top and left properties
+        left: (buttonClicked.position().left + buttonClicked.outerWidth()) + 'px' 
+    })
+}
+
 
 //*********************** */
 // Main Code
 //************************ */
 
-// add the function to the form submission
+// function for form submission
 $("form").on("submit", handleSubmit)
+
+
+// Event Delegation: .info-buttons are added to the DOM dynamically after the initial page load. Since the .info-button elements do not exist when we initially bind the event listener, the click event is not attached to these elements.
+// Here, we are attaching the event listener to a static parent element 'document' but telling the event listener to only execute when .info-button is clicked
+$(document).on("click", ".info-button", displayInfo)
+
+
+// hide the info-box when clicked anywhere else other than .info-box (the dialog box) and .info-button (the button)
+$(document).on('click', function(event) {
+    if (!$(event.target).closest('.info-button, .info-box').length) {
+        
+        //clear the info-box content, otherwise in the second click on the .info-button, the content shows up twice and so on
+        $('.info-box').html("")
+        
+        $('.info-box').hide()
+    }
+})
 
 //initial call to populate the first ticker
 getCompanyInfo("BLK")
