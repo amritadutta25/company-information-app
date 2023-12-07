@@ -106,7 +106,7 @@ ABOUT SECTION
 ==============================*/
 .more-about {
     width: 70%;
-    justify-content:space-between;
+    justify-content: space-between;
 }
 
 
@@ -122,7 +122,6 @@ STATISTICS SECTION
     flex-wrap:wrap;
 }
 
-
 .info-button {
     background-color: black;
     color: white;
@@ -137,13 +136,13 @@ STATISTICS SECTION
 }
 
 .info-box {
-    /* positioned abosloutely so that it is outside the normal document flow and 'floats' over other elements and later it is positioned in the eventListener function displayInfo() relative to the .info-button\
+    /* positioned abosloutely so that it is outside the normal document flow and 'floats' over other elements and later it is positioned in the eventListener function displayInfo() relative to the .info-button
      */
     position: absolute; 
     background-color: white;
     border: 1px solid black;
     padding: 5px;
-    display: none; /* Initially hidden */
+    display: none; /* initially hidden */
     color: black;
     font-size: 0.9em;
     width: 20%;
@@ -156,18 +155,24 @@ STATISTICS SECTION
 
 
 /* ============================
-Mobile view
+MOBILE VIEW
 ==============================*/
 @media screen and (max-width: 600px) { 
     .top-header {
         flex-wrap: wrap;
     }
 
-
     .logo, .nav {
         width: auto;
     }
 
+    .logo {
+        margin-left: 15px;
+    }
+
+    .search-icon {
+        top: 45%; 
+    }
 
     .form {
         width: 120px;
@@ -176,7 +181,34 @@ Mobile view
         border-radius: 24px;
         padding: 0px 12px;
         margin: 0px;
-      }
-    
+    }
 
+    .more-about {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .industry {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .stats-items {
+        display: block;
+    }
+
+    .stat {
+        display: flex;
+    }
+
+    .stat-num {
+        padding-top: 5%;
+        margin-left: 20px;
+    }
+
+    .info-box {
+        width: 30%;
+    }
+
+    
 }

@@ -104,15 +104,15 @@ function renderAboutCompany(data){
         <div class="row more-about">
             <div class="sector">
                 <h4>Sector</h4>
-                <span>${capitalizeWords(data.Sector)}</span>
+                <span class="about-value">${capitalizeWords(data.Sector)}</span>
             </div>
             <div class="industry">
                 <h4>Industry</h4>
-                <span>${capitalizeWords(data.Industry)}</span>
+                <span class="about-value">${capitalizeWords(data.Industry)}</span>
             </div>
             <div class="address">
                 <h4>Address</h4>
-                <span>${data.Address}</span>
+                <span class="about-value">${data.Address}</span>
             </div>
         </div>
         `
@@ -133,49 +133,49 @@ function renderStatsCompany(data){
                     <h4>Market Cap</h4>
                     <button class="info-button marketcap">i</button>
                 </div>
-                <span>${formatLargeNumber(data.MarketCapitalization)}</span>
+                <span class="stat-num">${formatLargeNumber(data.MarketCapitalization)}</span>
             </div>
             <div class="stat">
                 <div class="row stat-info">
                     <h4>EBITDA</h4>
                     <button class="info-button ebitda">i</button>
                 </div>
-                <span>${formatLargeNumber(data.EBITDA)}</span>
+                <span class="stat-num">${formatLargeNumber(data.EBITDA)}</span>
             </div>
             <div class="stat">
                 <div class="row stat-info">
                     <h4>Price-Earnings ratio</h4>
                     <button class="info-button peratio">i</button>
                 </div>
-                <span>${data.PERatio}</span>
+                <span class="stat-num">${data.PERatio}</span>
             </div>
             <div class="stat">
                 <div class="row stat-info">
                     <h4>Dividend Per Share</h4>
                     <button class="info-button divshare">i</button>
                 </div>
-                <span>${data.DividendPerShare}</span>
+                <span class="stat-num">${data.DividendPerShare}</span>
             </div>
             <div class="stat">
                 <div class="row stat-info">
                     <h4>Dividend Yield</h4>
                     <button class="info-button divyield">i</button>
                 </div>
-                <span>${data.DividendYield*100}%</span>
+                <span class="stat-num">${data.DividendYield*100}%</span>
             </div>
             <div class="stat">
                 <div class="row stat-info">
                     <h4>52 Week High</h4>
                     <button class="info-button weekhigh">i</button>
                 </div>
-                <span>$${data['52WeekHigh']}</span>
+                <span class="stat-num">$${data['52WeekHigh']}</span>
             </div>
             <div class="stat">
                 <div class="row stat-info">
                     <h4>52 Week Low</h4>
                     <button class="info-button weeklow">i</button>
                 </div>
-                <span>$${data['52WeekLow']}</span>
+                <span class="stat-num">$${data['52WeekLow']}</span>
             </div>
         </div>
         `
