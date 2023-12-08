@@ -12,7 +12,7 @@ const statsCompany = $(".stats") // company 'Statistics' section
 // object with additional stat info
 const statInfo = {
     marketcap: "Market capitalization refers to the total market value of a company's outstanding shares of stock.",
-    ebitda: "Stands for Earnings Before Interest, Taxes, Depreciation, and Amortization. It is a financial indicator measuring a company's profitability before accounting for interest, taxes, depreciation, and amortization.",
+    ebitda: "A financial indicator measuring a company's profitability before accounting for interest, taxes, depreciation, and amortization.",
     peratio: "A measure comparing a company's current stock price to its per-share earnings, often used to assess the value and growth potential of stocks.",
     divshare: "The amount of dividend a company pays out to its shareholders for each share owned.",
     divyield: "A financial ratio that shows how much a company pays out in dividends each year relative to its stock price.",
