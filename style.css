@@ -286,7 +286,7 @@ MOBILE VIEW
     }
 
     .info-box {
-        width: 60%;
+        min-width: 50%;
     }
 
     .service {
