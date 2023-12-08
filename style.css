@@ -284,6 +284,10 @@ MOBILE VIEW
         margin-left: 20px;
     }
 
+    .info-button {
+        max-width: 60%; /* to prevent the circle from stretching to full width of container */
+    }
+
     .info-box {
         width: 30%;
     }
@@ -291,16 +295,20 @@ MOBILE VIEW
     .service {
         /* add margin to left and right side of each flex item since .footer has justify-content:center to have these 3 child items (social, service, info) at the center of the div */
         margin: 0 20px;
-        width: 15%;
+        width: 15%;   /* width of each flex items */
        
     }
 
     .social .icons {
-        justify-content: center;
+        /* display them in multiple lines */
         display: inline-block;
         margin: 0 10px;
-        font-size: 2em; /* to increase the size of the logo */
+    }
 
+    .icons .icon {
+        /* to increase the size of the icons */
+        width: 20px;
+        height: auto;
     }
     
 }

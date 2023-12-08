@@ -3,9 +3,13 @@
 
 DEPLYOYED SITE: [Click Here](https://sealproject1-omega.vercel.app/)
 
-## Description on Project
+## Project Description
 
->The project aims to build a website to report company financial data based on user input. We are using a financial API called Alpha Vantage to retrieve data like daily price, company name, company description, company location etc.
+>The project aims to build a website to report company financial data based on user input. We are using a financial API called Alpha Vantage to retrieve data about the company like company name, company description, company location and some key statistics about the company.
+
+## Technologies Used:
+
+> HTML | CSS | JavaScript (jQuery)
 
 
 ## Details about the API
@@ -177,7 +181,7 @@ The Data I get back:
 ``` -->
 
 ## Mockup
-
+The website has a homepage with company name and description.
 The website will have a search bar where user inputs the ticker they want to know about.
 Once we receive the request, the website will display an overview of the company like its name, location, asset type, plus some stats like 52 week high trading price, 52 week low trading price.
 
@@ -193,11 +197,11 @@ Once we receive the request, the website will display an overview of the company
 
 |Day | Goal | What I did accomplish |
 |----|------|-----------------------|
-| Sat | Create Readme, Deploy, Get Approval | |
-| Sun | Build fetch of data in JS file ||
-| Mon | Render data from API on screen ||
-| Tues| Build form for user to interact with ||
-| Wed | wrap up functionality ||
-|Thurs| mobile layout styling ||
-| Fri | Desktop layout styling ||
-| Sat | Present Project ||
+| Sat | Create Readme, Deploy, Get Approval | Done |
+| Sun | Build fetch of data in JS file | Done |
+| Mon | Render data from API on screen | Done |
+| Tues| Build form for user to interact with | Done |
+| Wed | wrap up functionality | Done |
+|Thurs| mobile layout styling | Done |
+| Fri | Desktop layout styling | Done |
+| Sat | Present Project | Done|
