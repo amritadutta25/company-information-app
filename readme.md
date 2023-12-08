@@ -9,8 +9,7 @@ DEPLYOYED SITE: [Click Here](https://sealproject1-omega.vercel.app/)
 
 ## Technologies Used:
 
-> HTML | CSS | JavaScript (jQuery)
-
+> HTML | CSS | JavaScript | jQuery
 
 ## Details about the API
 
