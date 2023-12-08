@@ -1,6 +1,6 @@
 * {
     /* this creates a border across all containers/elemnts which makes it easier to view and apply css styles */
-    outline: 2px dotted green;
+    /* outline: 2px dotted green; */
 }
 
 .row {
