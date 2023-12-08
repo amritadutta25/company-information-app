@@ -79,9 +79,9 @@ function getCompanyInfo(ticker) {
     fetch(url)
     .then((res) => res.json())
     .then((data) => {
-        // if serahc produces no result
+        // if search produces no result, add content to .no-result div
         if (Object.keys(data).length === 0) {
-            $("main").append(`No result found. Please enter a valid ticker!`)
+            $(".no-result").append(`No result found. Please enter a valid ticker!`)
         }
         else {
             renderCompanyName(data)
@@ -197,6 +197,7 @@ function handleSubmit(event){
     companyName.html('')
     aboutCompany.html('')
     statsCompany.html('')
+    $(".no-result").html('') // remove the no search result if any in the previous search
     $(".home-page").remove()
     $(".footer").remove()
     
@@ -274,11 +275,3 @@ $(document).on('click', function(event) {
         $('.info-box').hide()
     }
 })
-
-
-
-//initial call to populate the first ticker
-// getCompanyInfo("BLK")
-
-
-// Todo: try adding one graph which is diplayed when user wants to see it
