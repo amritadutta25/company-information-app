@@ -1,7 +1,7 @@
 # Project
 ### By somebody
 
-DEPLYOYED SITE: [Click Here](https://amritadutta25.github.io/sealproject1/)
+DEPLYOYED SITE: [Click Here](https://sealproject1-omega.vercel.app/)
 
 ## Description on Project
 

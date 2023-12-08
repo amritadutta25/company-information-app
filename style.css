@@ -298,7 +298,9 @@ MOBILE VIEW
     .social .icons {
         justify-content: center;
         display: inline-block;
-        margin: 0 20px;
+        margin: 0 10px;
+        font-size: 2em; /* to increase the size of the logo */
+
     }
     
 }
