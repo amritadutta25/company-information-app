@@ -79,9 +79,16 @@ function getCompanyInfo(ticker) {
     fetch(url)
     .then((res) => res.json())
     .then((data) => {
-        renderCompanyName(data)
-        renderAboutCompany(data)
-        renderStatsCompany(data)
+        // if serahc produces no result
+        if (Object.keys(data).length === 0) {
+            $("main").append(`No result found. Please enter a valid ticker!`)
+        }
+        else {
+            renderCompanyName(data)
+            renderAboutCompany(data)
+            renderStatsCompany(data)
+        }
+
     })
 
 }
