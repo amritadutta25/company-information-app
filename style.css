@@ -83,6 +83,7 @@ input[type="text"] {
 nav {
     width: 80%;
     justify-content: flex-end;
+    padding-right: 30px;
 }
 
 /* nav items on hover turns green */
@@ -282,10 +283,6 @@ MOBILE VIEW
     .stat-num {
         padding-top: 5%;
         margin-left: 20px;
-    }
-
-    .info-button {
-        max-width: 30%; /* to prevent the circle from stretching to full width of container */
     }
 
     .info-box {
