@@ -297,6 +297,7 @@ MOBILE VIEW
 
     .social .icons {
         justify-content: center;
+        display: inline-block;
         margin: 0 20px;
     }
     
