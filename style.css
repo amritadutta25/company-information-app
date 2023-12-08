@@ -285,7 +285,7 @@ MOBILE VIEW
     }
 
     .info-button {
-        max-width: 60%; /* to prevent the circle from stretching to full width of container */
+        max-width: 30%; /* to prevent the circle from stretching to full width of container */
     }
 
     .info-box {
