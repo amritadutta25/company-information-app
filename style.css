@@ -1,6 +1,6 @@
 * {
     /* this creates a border across all containers/elemnts which makes it easier to view and apply css styles */
-    /* outline: 2px dotted green; */
+    outline: 2px dotted green;
 }
 
 .row {
@@ -9,11 +9,9 @@
 
 body {
     background-color: black;
-    font-family: 'Helvetica', sans-serif;
+    font-family: 'DM Sans', sans-serif;
     color: white;
-    margin-left: 30px;
-    margin-right: 30px;
-    font-size: 1em;
+    font-size: 1.2em;
 }
 
 hr {
@@ -101,6 +99,46 @@ form, .nav-item {
     padding-right: 7%;
 }
 
+
+
+/* ============================
+HOMEPAGE
+===============================*/
+.home-img {
+    width: 100%;
+    height: 70vh;
+    object-fit: cover;  /* this prevents breaking of image pixel to fit the given dimeansion */
+
+}
+ 
+.hompage-desc {
+    text-align: center; /* placing the company name and description at the center pf the page */
+    
+}
+
+.hompage-desc-name {
+    font-size: 2.5em;
+}
+
+.learn-more {
+    background-color: rgb(52, 134, 227);
+    border-radius: 5px;
+    padding: 8px 30px;
+    color: white;
+    font-size: 15px;
+}
+
+
+/* ============================
+MAIN
+===============================*/
+main {
+    margin-left: 30px;
+    margin-right: 30px;
+
+}
+
+
 /* ============================
 ABOUT SECTION
 ==============================*/
@@ -149,6 +187,40 @@ STATISTICS SECTION
     height: auto;
 }
 
+/* =========================
+FOOTER
+============================*/
+.footer {
+    justify-content: center;
+    background-color: #4c4a4a;
+
+}
+
+.social, .service, .info {
+    /* add margin to left and right side of each flex item since .footer has justify-content:center to have these 3 child items (social, service, info) at the center of the div */
+    margin: 0 50px;
+    width: 13%;
+   
+}
+
+.footer h4 {
+    color: white;
+}
+
+.footer p {
+    color: white;
+    font-size: 0.5em;
+}
+
+.social {
+    text-align: center;
+}
+
+
+.social .icons {
+    justify-content: center;
+    margin: 0 40%;
+}
 
 
 
@@ -183,6 +255,12 @@ MOBILE VIEW
         margin: 0px;
     }
 
+    .home-img{
+        max-width: 100%;
+        height: auto;
+
+    }
+
     .more-about {
         width: 100%;
         justify-content: space-between;
@@ -210,5 +288,16 @@ MOBILE VIEW
         width: 30%;
     }
 
+    .service {
+        /* add margin to left and right side of each flex item since .footer has justify-content:center to have these 3 child items (social, service, info) at the center of the div */
+        margin: 0 20px;
+        width: 15%;
+       
+    }
+
+    .social .icons {
+        justify-content: center;
+        margin: 0 20px;
+    }
     
 }

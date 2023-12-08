@@ -190,7 +190,8 @@ function handleSubmit(event){
     companyName.html('')
     aboutCompany.html('')
     statsCompany.html('')
-
+    $(".home-page").remove()
+    $(".footer").remove()
     
     // prevent the refreshing of the page from the form submission
     // refreshing of the page is the default behaviour of forms
@@ -267,9 +268,10 @@ $(document).on('click', function(event) {
     }
 })
 
+
+
 //initial call to populate the first ticker
-getCompanyInfo("BLK")
+// getCompanyInfo("BLK")
 
 
-// Todo: for statistics - do a 'i' button that when clicked opens a pop up in that space and says what it means
 // Todo: try adding one graph which is diplayed when user wants to see it

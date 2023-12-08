@@ -8,6 +8,9 @@
     <!-- extrenal libraries, include jquery -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 
+    <!-- Including google font Dm Sans -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100&family=Libre+Baskerville:wght@700&display=swap">
+
     <!-- my files -->
     <script src="./app.js" defer></script>
     <link rel="stylesheet" href="./style.css">
@@ -38,6 +41,17 @@
 
     </header>
 
+    <!-- HOMEPAGE -->
+    <div class="home-page">
+        <img src="./images/header_img.jpg" alt="stock chart" class="home-img">
+        <div class="hompage-desc">
+            <h1 class="hompage-desc-name">EasyStock Insight</h1>
+            <h4 class="hompage-desc-tagline">Discover the company of your choice, read about leading companies and more</h4>
+            <button class="learn-more">Learn More</button>
+        </div>
+    </div>
+
+    <!-- MAIN DISPLAY for USER SEARCH RESULT -->
     <main>
         <!-- DISPLAY COMPANY NAME -->
         <div class="company-name"></div>
@@ -52,7 +66,36 @@
         <div class="info-box"></div>
     </main> 
 
+    <!-- FOOTER -->
     <footer>
+        <div class="row footer">
+            <div class="social">
+                <h4 class="footer-name">EasyStock Insight</h4>
+    
+                <div class="row icons">
+                    <img src="./images/logo-twitter.svg" alt="" class="icon">
+                    <img src="./images/logo-facebook.svg" alt="" class="icon">
+                    <img src="./images/logo-instagram.svg" alt="" class="icon">
+                </div>
+    
+            </div>
+    
+            <div class="service">
+                <h4>Customer Service</h4>
+                <p>SATISFACTION COMMITMENT</p>
+                <p>DELIVERY POLICIES</p>
+                <p>CANCELLATION POLICIES</p>
+                <p>RETURN POLICY</p>
+            </div>
+    
+            <div class="info">
+                <h4>Support</h4>
+                <p>TERMS OF SERVICE</p>
+                <p>PRIVACY POLICY</p>
+                <p>CAREER OPPORTUNITY</p>
+                <p>MORE INFORMATION</p>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
