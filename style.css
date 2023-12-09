@@ -174,7 +174,7 @@ STATISTICS SECTION
 }
 
 .info-box {
-    /* positioned abosloutely so that it is outside the normal document flow and 'floats' over other elements and later it is positioned in the eventListener function displayInfo() relative to the .info-button
+    /* positioned absolutely so that it is outside the normal document flow and 'floats' over other elements and doesnt affect other elemenets and later it is positioned in the eventListener function displayInfo() relative to the .info-button
      */
     position: absolute; 
     background-color: white;

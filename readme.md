@@ -5,7 +5,9 @@ DEPLYOYED SITE: [Click Here](https://sealproject1-omega.vercel.app/)
 
 ## Project Description
 
->The project aims to build a website to report company financial data based on user input. We are using a financial API called Alpha Vantage to retrieve data about the company like company name, company description, company location and some key statistics about the company.
+>The app gives information on companies just by entering their stock ticker symbol. It's an efficient tool for quick access to key data, that can help investors, researchers, and financial enthusiasts stay informed about their favorite companies' performance and statistics.
+
+We are using a financial API called Alpha Vantage to retrieve data about the company like company name, company description, company location and some key statistics about the company.
 
 ## Technologies Used:
 
