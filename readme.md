@@ -1,5 +1,5 @@
 # Project
-### By somebody
+### By Amrita Dutta
 
 DEPLYOYED SITE: [Click Here](https://sealproject1-omega.vercel.app/)
 
