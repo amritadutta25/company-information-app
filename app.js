@@ -82,6 +82,11 @@ function getCompanyInfo(ticker) {
         // if search produces no result, add content to .no-result div
         if (Object.keys(data).length === 0) {
             $(".no-result").append(`No result found. Please enter a valid ticker!`)
+
+            // add some styling to add some margin
+            $(".no-result").css({
+                margin: "50px 10px"
+            })
         }
         else {
             renderCompanyName(data)
