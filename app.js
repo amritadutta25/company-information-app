@@ -245,6 +245,7 @@ function displayInfo(event) {
 
 
     infoBox.css({
+        // initally display: none for the info-box, so now we display it as a block
         display: 'block',
 
         // top of info-box aligns with the top of the element clicked, that is, info-button(event.target)
